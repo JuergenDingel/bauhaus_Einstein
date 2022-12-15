@@ -16,6 +16,7 @@ DRINK           = ["beer", "coffee", "milk", "tea", "water"]
 CIGARETTE       = ["Blend", "BlueMaster", "Dunhill", "PallMall", "Prince"]
 PET             = ["birds", "cats", "dogs", "fish", "horses"]
 
+# instances of this class will be considered equivalent iff their string representations hash to the same value
 class Unique(object):
     def __hash__(self):
         return hash(str(self))
@@ -29,50 +30,56 @@ class Unique(object):
 ####################################
 # CLASSES FOR ATOMIC PROPOSITIONS
 ####################################
+
+# an instance Nat(h,n) of this class represents an atomic proprosition capturing that house h has owner with nationality n
 @proposition(E)
 class Nat(Unique):
-    def __init__(self,id,nat):
-        self.id = id
+    def __init__(self,h,nat):
+        self.h = h
         self.nat = nat
 
+    # if class extends Unique, string reprentation below ensures that instances are the same iff they have the same attribute values
     def __str__(self):
-        return f"H{self.id}:nat={self.nat}"
+        return f"H{self.h}:nat={self.nat}"
 
+
+# an instance Col(h,c) represents an atomic proprosition capturing that house h has colour c
 @proposition(E)
 class Col(Unique):
-    def __init__(self,id,col):
-        self.id = id
+    def __init__(self,h,col):
+        self.h = h
         self.col = col
 
     def __str__(self):
-        return f"H{self.id}:col={self.col}"
+        return f"H{self.h}:col={self.col}"
 
+# atomic proposition capturing that house h has owner who prefers drink d
 @proposition(E)
 class Dri(Unique):
-    def __init__(self,id,dri):
-        self.id = id
+    def __init__(self,h,dri):
+        self.h = h
         self.dri = dri
 
     def __str__(self):
-        return f"H{self.id}:dri={self.dri}"
+        return f"H{self.h}:dri={self.dri}"
 
 @proposition(E)
 class Cig(Unique):
-    def __init__(self,id,cig):
-        self.id = id
+    def __init__(self,h,cig):
+        self.h = h
         self.cig = cig
 
     def __str__(self):
-        return f"H{self.id}:cig={self.cig}"
+        return f"H{self.h}:cig={self.cig}"
 
 @proposition(E)
 class Pet(Unique):
-    def __init__(self,id,pet):
-        self.id = id
+    def __init__(self,h,pet):
+        self.h = h
         self.pet = pet
 
     def __str__(self):
-        return f"H{self.id}:pet={self.pet}"
+        return f"H{self.h}:pet={self.pet}"
 
 
 ####################################
@@ -225,13 +232,13 @@ for h in HOUSE:
 ##########################
 # CONSTRAINTS FOR CHECKING 
 ##########################
-# fish owner cannot be in house 2 (but in 1, 3, 4, 5)
+# fish owner cannot be in houses 1, 2, 4, or 5
 # E.add_constraint(Pet(1,"fish") | Pet(2,"fish") | Pet(3,"fish") | Pet(5,"fish"))
 
 # fish owner can be in house 4
 # E.add_constraint(Pet(4,"fish"))
 
-# only the German can be fish owners
+# only the German can own the fish 
 # E.add_constraint(Nat(4,"German"))
 # E.add_constraint(Nat(4,"Norwegian"))
 
