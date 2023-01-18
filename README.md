@@ -1,8 +1,12 @@
-# CISC/CMPE 204 Modelling Project
+# Solving Einstein's Puzzle with Bauhaus
 
 Welcome to the major project for CISC/CMPE 204!
 
-Change this README.md file to summarize your project, and provide pointers to the general structure of the repository. How you organize and build things (which files, how you structure things, etc) is entirely up to you! The only things you must keep in place are what is already listed in the **Structure** section below.
+## Summary
+
+Go to, e.g., https://web.stanford.edu/~laurik/fsmbook/examples/Einstein%27sPuzzle.html for a description of Einstein's puzzle.
+We use the Python library Bauhaus (https://bauhaus.readthedocs.io/en/latest/bauhaus.html) to encode and solve it. The main purpose is to provide another example of the use of Bauhaus. As a project in CISC 204 it would probably be too simple (we'll use the CISC 204 project template nonetheless).
+
 
 ## Structure
 
