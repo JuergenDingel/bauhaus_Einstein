@@ -1,11 +1,9 @@
 # Solving Einstein's Puzzle with Bauhaus
 
-Welcome to the major project for CISC/CMPE 204!
-
 ## Summary
 
 Go to, e.g., https://web.stanford.edu/~laurik/fsmbook/examples/Einstein%27sPuzzle.html for a description of Einstein's puzzle.
-We use the Python library Bauhaus (https://bauhaus.readthedocs.io/en/latest/bauhaus.html) to encode and solve it. The main purpose is to provide another example of the use of Bauhaus. As a project in CISC 204 it would probably be too simple (we'll use the CISC 204 project template nonetheless).
+We use the Python library Bauhaus (https://bauhaus.readthedocs.io/en/latest/bauhaus.html) to encode and solve it. The main purpose is to provide another example of the use of Bauhaus. As a project in CISC 204 it would probably be too simple (we'll use the CISC 204 project template nonetheless). Note that none of the expected documents are provided. 
 
 
 ## Structure
