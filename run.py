@@ -260,6 +260,7 @@ soln = T.solve()
 
 # print solution
 # print_theory(soln)
+
 # print("solution: %s" % soln)
 
 if soln:
