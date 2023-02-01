@@ -108,7 +108,7 @@ E.add_constraint((Nat(1,"Dane") & Dri(1,"tea")) | \
                  (Nat(4,"Dane") & Dri(4,"tea")) | \
                  (Nat(5,"Dane") & Dri(5,"tea")))
 
-# C4: "The green house is just to the left of the white one"+
+# C4: "The green house is just to the left of the white one"
 E.add_constraint((Col(1,"green") & Col(2,"white")) | \
                  (Col(2,"green") & Col(3,"white")) | \
                  (Col(3,"green") & Col(4,"white")) | \
@@ -241,11 +241,13 @@ for h in HOUSE:
 # only the German can own the fish 
 # E.add_constraint(Nat(4,"German"))
 # E.add_constraint(Nat(4,"Norwegian"))
+# E.add_constraint(~(Nat(1,"German")|Nat(2,"German")|Nat(3,"German")|Nat(4,"German")|Nat(5,"German")))
+# E.add_constraint(Nat(1,"German")&Nat(1,"Swede"))
+
 
 #########
 # SOLVING
 #########
-
 # Don't compile until you're finished adding all your constraints!
 T = E.compile()
 # E.introspect()
@@ -261,7 +263,7 @@ soln = T.solve()
 # print solution
 # print_theory(soln)
 
-# print("solution: %s" % soln)
+# 
 
 if soln:
     dict = {}
