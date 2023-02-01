@@ -232,6 +232,7 @@ for h in HOUSE:
 ##########################
 # CONSTRAINTS FOR CHECKING 
 ##########################
+# E.add_constraint(~Nat(4,"German"))
 # fish owner cannot be in houses 1, 2, 4, or 5
 # E.add_constraint(Pet(1,"fish") | Pet(2,"fish") | Pet(3,"fish") | Pet(5,"fish"))
 
